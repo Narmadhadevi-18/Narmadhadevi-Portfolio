@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Narmadhadevi A</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../Downloads/fontawesome-free-6.7.2-web/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+       
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        #vanta-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            /* push behind everything */
+        }
+
+        .back {
+            background-image: url('https://marketplace.canva.com/EAFJ-6rl9Q8/1/0/1600w/canva-blue-chalk-inspirational-quotes-desktop-wallpaper-_W9QJokBsD0.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            min-height: 100vh;
+        }
+
+        .an {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 20px;
+        }
+
+        .an:hover,
+        .card-headi {
+            background-color: #f5f5f5;
+            color: navy !important;
+            text-decoration: none;
+            border-radius: 5px;
+            padding: 2px;
+            box-shadow: 5px;          
+        }
+
+        .page-wrapper {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+
+        }
+
+        footer {
+            padding: 10px;
+        }
+
+        .vh-500 {
+            min-height: 150px;
+        }
+
+        .mb {
+            margin-bottom: 0;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        #hide {
+            display: none;
+
+        }
+
+        #content {
+            color: black;
+        }
+
+        .name {
+            background-color: rgb(8, 8, 70);
+        }
+        .bg-darki{
+            background-color:rgb(24, 1, 53)
+        }
+    </style>
+</head>
+
+<body>
+    <div id="vanta-bg"></div>
+    <div class="page-wrapper">
+
+        <nav class="card card-head bg-darki text-white p-3 name">
+            <span style="text-align: center; font-weight: bold;font-size:30px;">NARMADHADEVI A</span>
+
+            <span style="text-align: center;">Electronics and Communication Engineer/Software Developer</span>
+            <div class="menu">
+                <a href="#" style="text-decoration: none; color: white;" class="an" id="about">About</a>
+                <a href="#" style="text-decoration: none; color: white;" class="an" id="education">Education</a>
+                <a href="#" style="text-decoration: none; color: white;" class="an" id="experience">Experience</a>
+                <a href="#" style="text-decoration: none; color: white;" class="an" id="projects">Projects</a>
+                <a href="#" style="text-decoration: none; color: white;" class="an" id="skills">Skills</a>
+                <a href="#" style="text-decoration: none; color: white;" class="an"
+                    id="certifications">Certfications</a>
+                <a href="#" style="text-decoration: none; color: white;" class="an" id="contact">Contact</a>
+            </div>
+        </nav>
+
+        <main >
+            <div class="vh-500">
+                <section class="text-white mt-2 w-50 m-auto " id="hide">
+                    <div class="card card-head ps-3 p-1 card-headi" id="menu"></div>
+                    <div class="card card-body mt-2" id="content"></div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="card bg-darki text-white text-center">
+            <p class="mb">&copy; 2025 Narmadhadevi A | All rights reserved.</p>
+        </footer>
+
+        <script>
+            // Get elements
+            const about = document.getElementById("about");
+            const education = document.getElementById("education");
+            const projects = document.getElementById("projects");
+            const skills = document.getElementById("skills");
+            const contact = document.getElementById("contact");
+            const experience = document.getElementById("experience");
+            const certifications = document.getElementById("certifications");
+
+            const hideSection = document.getElementById("hide");
+            const menu = document.getElementById("menu");
+            const content = document.getElementById("content");
+            // Show welcome content by default
+            hideSection.style.display = "block";
+            menu.innerHTML = `<h4>Welcome</h4>`;
+            content.innerHTML = `
+            <h4>Welcome to My Portfolio 👋🏻</h4>
+            <p>Thank you for visiting my website.</p>
+            <p>
+                I am <strong>Narmadhadevi A</strong>, an enthusiastic engineer passionate about <em>space research, electronics, embedded systems</em>, and <em>software development</em>. This platform is a reflection of my academic journey, hands-on projects, technical skills, and continuous learning.
+            </p>
+            <p>
+                Here, you'll find detailed insights into my <strong>educational background</strong>, <strong>technical projects</strong>, <strong>certifications</strong>, and areas of interest including <em>IoT, sensor fusion, and AI applications in aerospace</em>.
+            </p>
+            <p>
+                I aspire to contribute meaningfully to innovative, research-driven environments and product-based companies in the technology or space sector.
+            </p>
+            <p>
+                Please feel free to explore the sections using the navigation bar above. I look forward to connecting and collaborating on impactful ideas.
+            </p>
+        `;
+
+
+            // Function to show section and update content
+            function showContent(title, text) {
+                hideSection.style.display = "block"; // Show the hidden section
+                menu.innerHTML = `<h5>${title}</h5>`;
+                content.innerHTML = text;
+            }
+
+            // Event listeners
+            about.onclick = function (event) {
+                event.preventDefault();
+                showContent("About Me", `
+            <p>I am Narmadhadevi A, passionate about space technology, electronics, and learning new things.</p>
+        `);
+            }
+
+            education.onclick = function (event) {
+                event.preventDefault();
+                showContent("Education 🎓", `
+            <ul>
+                <li>B.E. in Electronics and Communication Engineering(2021-2025)</li>
+                <li>Relavant Course works:  Embedded Systems, Communication systems, Rocket Science, Data Science</li>
+            </ul>
+        `);
+            }
+
+            projects.onclick = function (event) {
+                event.preventDefault();
+                showContent("Projects 🚀", `
+            <ul>
+                <li>Sensor Fusion and Data Integration for Combat Aircraft</li>
+                <li>Frameworks for the Electronic Warfare Threat Scenerio Simulator and basic model of RWR, Ground and Airborne Radars using Python</li>
+                <li>DTMF based Home Automation without the use of micro-controller</li>
+                <li>ESP8266 Weather Reporting System</li>
+                <span> More projects - <strong><a href="http://github.com/Narmadhadevi-18">github.com/Narmadhadevi-18</a></strong></span>
+            </ul>
+        `);
+            }
+
+            skills.onclick = function (event) {
+                event.preventDefault();
+                showContent("Skills 💡", `
+                <h5>💻 Technical Skills</h5>
+                    <ul>
+                        <ul><strong>Programming Languages & Frameworks</strong>
+                            <li><i class="fab fa-python"></i>Python</li>
+                            <li>☕ Fundamentals of Java, C </li>
+                            <li>🌐 HTML, CSS, JavaScript</li>
+                            <li>⚛️ React native js</li>
+                            <li>📊 Matlab</li>
+                            <li>  Oracle SQL</li>
+                            <li>☁️🧠Fundamentals of Cloud computing, AI/ML, API concepts.</li>
+                        </ul>
+                        <ul><strong>Developer Tools</strong>
+                            <li>📱 Android App Development</li>
+                            <li>🐧 Linux(Ubuntu)</li>
+                            <li>Data vizualization,IoT,OOPS,DSA</li>
+                  </ul>
+                </ul>
+                <h5>🧠 Soft Skills</h5>
+                    <ul>
+                        <li>🗣️ Communication</li>
+                        <li>🕵🏼‍♂️ Problem solving & critical thinking</li>
+                        <li>🤝 Teamwork</li>
+                        <li>📚 Proactive & Continuous Learning</li>
+                        <li> 🗣 Languages: <strong>Tamil, English, Hindi, Japanese(basic)</strong></li>
+                    </ul>
+                `)
+            }
+            experience.onclick = function (event) {
+                event.preventDefault();
+            
+                showContent("Experience", `
+                
+                <ul>
+                  <li><strong>Defense Research & Development Organization</strong> - <em>Software Developement Project Intern</em>(Jan 2025-Apr 2025)</li>
+                    <li><strong>AIMST University</strong> - <em>Technical Intern</em> (Aug 2024-Sep 2024)</li>
+                    <li><strong>AICTE Virtual Internship</strong> - <em>Embedded Developer Virtual Intern</em> (Sep 2024-Oct 2024)</li>
+                    <li><strong>Defense Research & Development Organization</strong> - <em>Software Developement Intern</em> (Feb 2024-Mar 2024)</li>
+                    <li><strong>Bharat Intern</strong> - <em>Mobile Application Developement</em> (Dec 2023-Jan 2024)</li>
+                    <li><strong>Bharat Sanchar Nigam Limited(BSNL)</strong> - <em>Telecom Intern</em> (May 2023-Jun 2023)</li>
+                </ul>
+                `)
+            }
+            certifications.onclick = function (event) {
+                event.preventDefault();
+                showContent("Certifications", `
+                 <ul>
+                    <li> Python essentials –Cisco Networking academy</li>
+                    <li> Android application development - Infyrec</li>
+                    <li> Introduction to Data Science – Cisco networking academy</li>
+                    <li> Introduction to Internet of Things - NPTEL</li>
+                    <li> Arduino – IIT Bombay spoken tutorial</li>
+                    <li> Matlab - Mathworks</li>
+                </ul>
+                `)
+            }
+            contact.onclick = function (event) {
+                event.preventDefault();
+                showContent("Contact ☎️", `
+            <p>Email : narmadhadevia2004@gmail.com</p>
+            <p>Mobile: 7418192007</p>
+            <p>LinkedIn: <a href="http://linkedin.com/in/narmadhadevi-a-168632255/" target="_blank">linkedin.com/in/narmadhadevi-a-168632255/</a></p>
+        `);
+            }
+         VANTA.NET({
+                el: "#vanta-bg",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0xf0e0e5,
+                backgroundColor: 0x14092a
+            })
+        </script>
+        
+
+    </div>
+</body>
+
+</html>
