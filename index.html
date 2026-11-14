@@ -4,17 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Narmadhadevi A</title>
+    <meta name="description" content="Portfolio of Narmadhadevi A, Electronics and Communication Engineer interested in software development, embedded systems and space technology.">
+    <title>Narmadhadevi A | Portfolio</title>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../Downloads/fontawesome-free-6.7.2-web/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
-       
+
     <style>
-        html,
-        body {
-            height: 100%;
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            min-height: 100%;
             margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
         }
 
         #vanta-bg {
@@ -24,253 +36,723 @@
             top: 0;
             left: 0;
             z-index: -1;
-            /* push behind everything */
         }
 
-        .back {
-            background-image: url('https://marketplace.canva.com/EAFJ-6rl9Q8/1/0/1600w/canva-blue-chalk-inspirational-quotes-desktop-wallpaper-_W9QJokBsD0.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
+        .page-wrapper {
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .name {
+            background-color: rgb(8, 8, 70);
+        }
+
+        .bg-darki {
+            background-color: rgb(24, 1, 53);
+        }
+
+        nav {
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-name {
+            text-align: center;
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        .profile-title {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px 24px;
         }
 
         .an {
             color: white;
             text-decoration: none;
             transition: 0.3s;
-            font-size: 20px;
+            font-size: 17px;
+            padding: 5px;
         }
 
-        .an:hover,
-        .card-headi {
+        .an:hover {
             background-color: #f5f5f5;
             color: navy !important;
-            text-decoration: none;
             border-radius: 5px;
-            padding: 2px;
-            box-shadow: 5px;          
-        }
-
-        .page-wrapper {
-            min-height: 100%;
-            display: flex;
-            flex-direction: column;
         }
 
         main {
             flex: 1;
-
+            padding: 25px 15px;
         }
 
-        footer {
-            padding: 10px;
-        }
-
-        .vh-500 {
-            min-height: 150px;
-        }
-
-        .mb {
-            margin-bottom: 0;
-        }
-
-        .menu {
-            display: flex;
-            justify-content: space-around;
-
-        }
-
-        #hide {
+        .content-section {
             display: none;
+            width: 75%;
+            max-width: 950px;
+            margin: auto;
+        }
 
+        .card-headi {
+            background-color: #f5f5f5;
+            color: navy;
+            border-radius: 5px;
+            padding: 12px;
         }
 
         #content {
             color: black;
+            line-height: 1.7;
+            padding: 25px;
+            overflow-wrap: anywhere;
         }
 
-        .name {
-            background-color: rgb(8, 8, 70);
+        #content p {
+            text-align: justify;
+            margin-bottom: 15px;
         }
-        .bg-darki{
-            background-color:rgb(24, 1, 53)
+
+        #content ul {
+            padding-left: 25px;
+            margin-bottom: 18px;
+        }
+
+        #content li {
+            padding-left: 4px;
+            margin-bottom: 10px;
+        }
+
+        #content ul ul {
+            margin-top: 8px;
+        }
+
+        #content a {
+            color: #073b8c;
+            overflow-wrap: anywhere;
+        }
+
+        .section-heading {
+            color: #160b45;
+            font-weight: bold;
+            margin-top: 18px;
+            margin-bottom: 12px;
+        }
+
+        footer {
+            padding: 12px;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .profile-name {
+                font-size: 24px;
+            }
+
+            .profile-title {
+                font-size: 14px;
+            }
+
+            .menu {
+                gap: 8px 12px;
+            }
+
+            .an {
+                font-size: 15px;
+            }
+
+            .content-section {
+                width: 100%;
+            }
+
+            main {
+                padding: 15px 10px;
+            }
+
+            #content {
+                padding: 18px;
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .menu {
+                gap: 7px;
+            }
+
+            .an {
+                font-size: 14px;
+            }
+
+            .profile-name {
+                font-size: 21px;
+            }
         }
     </style>
 </head>
 
 <body>
+
     <div id="vanta-bg"></div>
+
     <div class="page-wrapper">
 
-        <nav class="card card-head bg-darki text-white p-3 name">
-            <span style="text-align: center; font-weight: bold;font-size:30px;">NARMADHADEVI A</span>
+        <nav class="card bg-darki text-white p-3 name">
 
-            <span style="text-align: center;">Electronics and Communication Engineer/Software Developer</span>
+            <span class="profile-name">NARMADHADEVI A</span>
+
+            <span class="profile-title">
+                Electronics and Communication Engineer | Software Developer
+            </span>
+
             <div class="menu">
-                <a href="#" style="text-decoration: none; color: white;" class="an" id="about">About</a>
-                <a href="#" style="text-decoration: none; color: white;" class="an" id="education">Education</a>
-                <a href="#" style="text-decoration: none; color: white;" class="an" id="experience">Experience</a>
-                <a href="#" style="text-decoration: none; color: white;" class="an" id="projects">Projects</a>
-                <a href="#" style="text-decoration: none; color: white;" class="an" id="skills">Skills</a>
-                <a href="#" style="text-decoration: none; color: white;" class="an"
-                    id="certifications">Certfications</a>
-                <a href="#" style="text-decoration: none; color: white;" class="an" id="contact">Contact</a>
+                <a href="#" class="an" id="about">About</a>
+                <a href="#" class="an" id="education">Education</a>
+                <a href="#" class="an" id="experience">Experience</a>
+                <a href="#" class="an" id="projects">Projects</a>
+                <a href="#" class="an" id="skills">Skills</a>
+                <a href="#" class="an" id="certifications">Certifications</a>
+                <a href="#" class="an" id="contact">Contact</a>
             </div>
+
         </nav>
 
-        <main >
-            <div class="vh-500">
-                <section class="text-white mt-2 w-50 m-auto " id="hide">
-                    <div class="card card-head ps-3 p-1 card-headi" id="menu"></div>
-                    <div class="card card-body mt-2" id="content"></div>
-                </section>
-            </div>
+        <main>
+
+            <section class="content-section" id="hide">
+
+                <div class="card card-headi mb-2" id="menu"></div>
+
+                <div class="card card-body" id="content"></div>
+
+            </section>
+
         </main>
 
         <footer class="card bg-darki text-white text-center">
-            <p class="mb">&copy; 2025 Narmadhadevi A | All rights reserved.</p>
+            <p>&copy; 2026 Narmadhadevi A | All rights reserved.</p>
         </footer>
 
-        <script>
-            // Get elements
-            const about = document.getElementById("about");
-            const education = document.getElementById("education");
-            const projects = document.getElementById("projects");
-            const skills = document.getElementById("skills");
-            const contact = document.getElementById("contact");
-            const experience = document.getElementById("experience");
-            const certifications = document.getElementById("certifications");
+    </div>
 
-            const hideSection = document.getElementById("hide");
-            const menu = document.getElementById("menu");
-            const content = document.getElementById("content");
-            // Show welcome content by default
+    <script>
+
+        // Navigation elements
+        const about = document.getElementById("about");
+        const education = document.getElementById("education");
+        const experience = document.getElementById("experience");
+        const projects = document.getElementById("projects");
+        const skills = document.getElementById("skills");
+        const certifications = document.getElementById("certifications");
+        const contact = document.getElementById("contact");
+
+        const hideSection = document.getElementById("hide");
+        const menu = document.getElementById("menu");
+        const content = document.getElementById("content");
+
+
+        // Function to display selected section
+        function showContent(title, text) {
+
             hideSection.style.display = "block";
-            menu.innerHTML = `<h4>Welcome</h4>`;
-            content.innerHTML = `
+
+            menu.innerHTML = `<h5>${title}</h5>`;
+
+            content.innerHTML = text;
+
+        }
+
+
+        // Welcome section
+        showContent("Welcome", `
+
             <h4>Welcome to My Portfolio 👋🏻</h4>
+
             <p>Thank you for visiting my website.</p>
-            <p>
-                I am <strong>Narmadhadevi A</strong>, an enthusiastic engineer passionate about <em>space research, electronics, embedded systems</em>, and <em>software development</em>. This platform is a reflection of my academic journey, hands-on projects, technical skills, and continuous learning.
-            </p>
-            <p>
-                Here, you'll find detailed insights into my <strong>educational background</strong>, <strong>technical projects</strong>, <strong>certifications</strong>, and areas of interest including <em>IoT, sensor fusion, and AI applications in aerospace</em>.
-            </p>
-            <p>
-                I aspire to contribute meaningfully to innovative, research-driven environments and product-based companies in the technology or space sector.
-            </p>
-            <p>
-                Please feel free to explore the sections using the navigation bar above. I look forward to connecting and collaborating on impactful ideas.
-            </p>
-        `;
 
+            <p>
+                I am <strong>Narmadhadevi A</strong>, an Electronics and
+                Communication Engineering graduate interested in
+                electronics, software development, embedded systems,
+                and space technology.
+            </p>
 
-            // Function to show section and update content
-            function showContent(title, text) {
-                hideSection.style.display = "block"; // Show the hidden section
-                menu.innerHTML = `<h5>${title}</h5>`;
-                content.innerHTML = text;
-            }
+            <p>
+                This portfolio showcases my academic background,
+                professional experience, technical projects, skills,
+                and continuous learning journey.
+            </p>
 
-            // Event listeners
-            about.onclick = function (event) {
-                event.preventDefault();
-                showContent("About Me", `
-            <p>I am Narmadhadevi A, passionate about space technology, electronics, and learning new things.</p>
+            <p>
+                My interests include aerospace applications, sensor
+                processing, embedded systems, software development,
+                and AI applications in engineering.
+            </p>
+
+            <p>
+                I aspire to contribute to innovative and research-driven
+                environments across the technology, aerospace,
+                and defence sectors.
+            </p>
+
         `);
-            }
 
-            education.onclick = function (event) {
-                event.preventDefault();
-                showContent("Education 🎓", `
-            <ul>
-                <li>B.E. in Electronics and Communication Engineering(2021-2025)</li>
-                <li>Relavant Course works:  Embedded Systems, Communication systems, Rocket Science, Data Science</li>
-            </ul>
-        `);
-            }
 
-            projects.onclick = function (event) {
-                event.preventDefault();
-                showContent("Projects 🚀", `
-            <ul>
-                <li>Sensor Fusion and Data Integration for Combat Aircraft</li>
-                <li>Frameworks for the Electronic Warfare Threat Scenerio Simulator and basic model of RWR, Ground and Airborne Radars using Python</li>
-                <li>DTMF based Home Automation without the use of micro-controller</li>
-                <li>ESP8266 Weather Reporting System</li>
-                <span> More projects - <strong><a href="http://github.com/Narmadhadevi-18">github.com/Narmadhadevi-18</a></strong></span>
-            </ul>
-        `);
-            }
+        // About section
+        about.onclick = function(event) {
 
-            skills.onclick = function (event) {
-                event.preventDefault();
-                showContent("Skills 💡", `
-                <h5>💻 Technical Skills</h5>
-                    <ul>
-                        <ul><strong>Programming Languages & Frameworks</strong>
-                            <li><i class="fab fa-python"></i>Python</li>
-                            <li>☕ Fundamentals of Java, C </li>
-                            <li>🌐 HTML, CSS, JavaScript</li>
-                            <li>⚛️ React native js</li>
-                            <li>📊 Matlab</li>
-                            <li>  Oracle SQL</li>
-                            <li>☁️🧠Fundamentals of Cloud computing, AI/ML, API concepts.</li>
-                        </ul>
-                        <ul><strong>Developer Tools</strong>
-                            <li>📱 Android App Development</li>
-                            <li>🐧 Linux(Ubuntu)</li>
-                            <li>Data vizualization,IoT,OOPS,DSA</li>
-                  </ul>
-                </ul>
-                <h5>🧠 Soft Skills</h5>
-                    <ul>
-                        <li>🗣️ Communication</li>
-                        <li>🕵🏼‍♂️ Problem solving & critical thinking</li>
-                        <li>🤝 Teamwork</li>
-                        <li>📚 Proactive & Continuous Learning</li>
-                        <li> 🗣 Languages: <strong>Tamil, English, Hindi, Japanese(basic)</strong></li>
-                    </ul>
-                `)
-            }
-            experience.onclick = function (event) {
-                event.preventDefault();
-            
-                showContent("Experience", `
-                
+            event.preventDefault();
+
+            showContent("About Me", `
+
+                <p>
+                    I am an Electronics and Communication Engineering
+                    graduate with an interest in software development,
+                    embedded systems, electronics, and space technology.
+                </p>
+
+                <p>
+                    I have gained practical experience through internships
+                    and my apprenticeship at the Defence Research and
+                    Development Organisation (DRDO), where I have worked
+                    with C++, Qt, application development, and technical
+                    documentation.
+                </p>
+
+                <p>
+                    I enjoy exploring how software and electronics
+                    integrate to solve real-world engineering problems.
+                    My technical interests include desktop application
+                    development, sensor data processing, embedded
+                    technologies, and aerospace applications.
+                </p>
+
+                <p>
+                    I am continuously improving my programming,
+                    problem-solving, and engineering skills while
+                    exploring opportunities to contribute to
+                    technology-driven projects.
+                </p>
+
+            `);
+
+        };
+
+
+        // Education section
+        education.onclick = function(event) {
+
+            event.preventDefault();
+
+            showContent("Education 🎓", `
+
                 <ul>
-                  <li><strong>Defense Research & Development Organization</strong> - <em>Software Developement Project Intern</em>(Jan 2025-Apr 2025)</li>
-                    <li><strong>AIMST University</strong> - <em>Technical Intern</em> (Aug 2024-Sep 2024)</li>
-                    <li><strong>AICTE Virtual Internship</strong> - <em>Embedded Developer Virtual Intern</em> (Sep 2024-Oct 2024)</li>
-                    <li><strong>Defense Research & Development Organization</strong> - <em>Software Developement Intern</em> (Feb 2024-Mar 2024)</li>
-                    <li><strong>Bharat Intern</strong> - <em>Mobile Application Developement</em> (Dec 2023-Jan 2024)</li>
-                    <li><strong>Bharat Sanchar Nigam Limited(BSNL)</strong> - <em>Telecom Intern</em> (May 2023-Jun 2023)</li>
+
+                    <li>
+                        <strong>B.E. Electronics and Communication Engineering</strong>
+                        <br>
+                        Paavai Engineering College
+                        <br>
+                        2021 – 2025
+                        <br>
+                        CGPA: 8.54/10
+                    </li>
+
+                    <li>
+                        <strong>Relevant Coursework</strong>
+                        <ul>
+                            <li>Embedded Systems</li>
+                            <li>Communication Systems</li>
+                            <li>Digital Electronics</li>
+                            <li>Signals and Systems</li>
+                            <li>Data Science</li>
+                        </ul>
+                    </li>
+
                 </ul>
-                `)
-            }
-            certifications.onclick = function (event) {
-                event.preventDefault();
-                showContent("Certifications", `
-                 <ul>
-                    <li> Python essentials –Cisco Networking academy</li>
-                    <li> Android application development - Infyrec</li>
-                    <li> Introduction to Data Science – Cisco networking academy</li>
-                    <li> Introduction to Internet of Things - NPTEL</li>
-                    <li> Arduino – IIT Bombay spoken tutorial</li>
-                    <li> Matlab - Mathworks</li>
+
+            `);
+
+        };
+
+
+        // Experience section
+        experience.onclick = function(event) {
+
+            event.preventDefault();
+
+            showContent("Professional Experience", `
+
+                <ul>
+
+                    <li>
+                        <strong>Defence Research and Development Organisation (DRDO)</strong>
+                        <br>
+                        <em>Apprentice – LRDE</em>
+                        <br>
+                        January 2026 – Present
+                        <ul>
+                            <li>
+                                Working in a technical environment involving
+                                testing, validation, and documentation.
+                            </li>
+                            <li>
+                                Developing a C++ and Qt-based desktop
+                                application for employee attendance
+                                management.
+                            </li>
+                            <li>
+                                Working with GUI development, TCP
+                                client-server communication, and CSV
+                                data handling.
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>Defence Research and Development Organisation</strong>
+                        <br>
+                        <em>Software Development Project Trainee</em>
+                        <br>
+                        January 2025 – April 2025
+                    </li>
+
+                    <li>
+                        <strong>AIMST University</strong>
+                        <br>
+                        <em>Technical Intern</em>
+                        <br>
+                        August 2024 – September 2024
+                    </li>
+
+                    <li>
+                        <strong>AICTE Virtual Internship</strong>
+                        <br>
+                        <em>Embedded Developer Intern</em>
+                        <br>
+                        September 2024 – October 2024
+                    </li>
+
+                    <li>
+                        <strong>Defence Research and Development Organisation</strong>
+                        <br>
+                        <em>Software Development Intern</em>
+                        <br>
+                        February 2024 – March 2024
+                    </li>
+
+                    <li>
+                        <strong>Bharat Intern</strong>
+                        <br>
+                        <em>Mobile Application Development Intern</em>
+                        <br>
+                        December 2023 – January 2024
+                    </li>
+
+                    <li>
+                        <strong>Bharat Sanchar Nigam Limited (BSNL)</strong>
+                        <br>
+                        <em>Telecom Intern</em>
+                        <br>
+                        May 2023 – June 2023
+                    </li>
+
                 </ul>
-                `)
-            }
-            contact.onclick = function (event) {
-                event.preventDefault();
-                showContent("Contact ☎️", `
-            <p>Email : narmadhadevia2004@gmail.com</p>
-            <p>Mobile: 7418192007</p>
-            <p>LinkedIn: <a href="http://linkedin.com/in/narmadhadevi-a-168632255/" target="_blank">linkedin.com/in/narmadhadevi-a-168632255/</a></p>
-        `);
-            }
-         VANTA.NET({
+
+            `);
+
+        };
+
+
+        // Projects section
+        projects.onclick = function(event) {
+
+            event.preventDefault();
+
+            showContent("Projects 🚀", `
+
+                <ul>
+
+                    <li>
+                        <strong>Sensor Fusion and Data Integration for Combat Aircraft | Python</strong>
+                        <ul>
+                            <li>
+                                Developed a Python-based framework to
+                                integrate data from multiple sensors
+                                for improved tracking and situational
+                                awareness.
+                            </li>
+                            <li>
+                                Applied data processing techniques to
+                                combine sensor information and support
+                                accurate target tracking.
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>Employee Attendance Management System | Qt, C++</strong>
+                        <ul>
+                            <li>
+                                Developed a client-server desktop
+                                application for employee attendance
+                                management using C++ and Qt.
+                            </li>
+                            <li>
+                                Implemented TCP-based client-server
+                                communication and attendance data handling.
+                            </li>
+                            <li>
+                                Included attendance tracking,
+                                date-based filtering, report generation,
+                                and CSV export.
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>Airborne Inventory | Qt/C++</strong>
+                        <ul>
+                            <li>
+                                Developed a Qt-based desktop application
+                                to organize and manage airborne inventory
+                                information through a graphical user
+                                interface.
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>Industrial Machine Monitoring Dashboard | Qt/C++</strong>
+                        <ul>
+                            <li>
+                                Developed a desktop dashboard for
+                                monitoring industrial machine parameters
+                                and operating status.
+                            </li>
+                            <li>
+                                Implemented GUI controls and real-time
+                                parameter visualization.
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>Electronic Warfare Threat Scenario Simulator | Python</strong>
+                        <ul>
+                            <li>
+                                Developed a Python-based scenario
+                                simulator focusing on data processing
+                                and system logic to evaluate combat
+                                aircraft system performance.
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>DTMF-Based Home Automation</strong>
+                        <ul>
+                            <li>
+                                Implemented a home automation concept
+                                using DTMF signals without a
+                                microcontroller.
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>ESP8266 Weather Reporting System</strong>
+                        <ul>
+                            <li>
+                                Worked on an IoT-based weather reporting
+                                system using the ESP8266 platform.
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+                <p>
+                    <strong>More Projects:</strong>
+                    <a href="https://github.com/Narmadhadevi-18"
+                       target="_blank" rel="noopener noreferrer">
+                        github.com/Narmadhadevi-18
+                    </a>
+                </p>
+
+            `);
+
+        };
+
+
+        // Skills section
+        skills.onclick = function(event) {
+
+            event.preventDefault();
+
+            showContent("Technical Skills 💡", `
+
+                <h5 class="section-heading">
+                    Programming Languages & Frameworks
+                </h5>
+
+                <ul>
+                    <li>Python</li>
+                    <li>C</li>
+                    <li>C++ (Fundamentals)</li>
+                    <li>Qt</li>
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>React Native (JavaScript)</li>
+                    <li>Oracle SQL</li>
+                    <li>Django and Streamlit (Fundamentals)</li>
+                    <li>MATLAB</li>
+                </ul>
+
+                <h5 class="section-heading">
+                    Developer Tools & Technologies
+                </h5>
+
+                <ul>
+                    <li>Qt Creator</li>
+                    <li>VS Code</li>
+                    <li>Android Studio (Emulator)</li>
+                    <li>Ubuntu Linux</li>
+                    <li>Git and GitHub</li>
+                    <li>EasyEDA</li>
+                    <li>Proteus Professional</li>
+                    <li>Data Visualization</li>
+                    <li>IoT and API Concepts</li>
+                    <li>Fundamentals of AI/ML</li>
+                    <li>Object-Oriented Programming Fundamentals</li>
+                </ul>
+
+                <h5 class="section-heading">
+                    Soft Skills
+                </h5>
+
+                <ul>
+                    <li>Teamwork and Multitasking</li>
+                    <li>Problem Solving and Critical Thinking</li>
+                    <li>Proactive Learning and Adaptability</li>
+                    <li>Technical Writing</li>
+                    <li>Communication</li>
+                </ul>
+
+                <h5 class="section-heading">
+                    Languages
+                </h5>
+
+                <ul>
+                    <li>Tamil</li>
+                    <li>English</li>
+                    <li>Hindi</li>
+                    <li>Japanese (Basic)</li>
+                </ul>
+
+            `);
+
+        };
+
+
+        // Certifications section
+        certifications.onclick = function(event) {
+
+            event.preventDefault();
+
+            showContent("Certifications 📜", `
+
+                <ul>
+
+                    <li>
+                        Python Essentials – Cisco Networking Academy
+                    </li>
+
+                    <li>
+                        Android Application Development – Infyrec
+                    </li>
+
+                    <li>
+                        Introduction to Data Science – Cisco Networking Academy
+                    </li>
+
+                    <li>
+                        Introduction to Internet of Things – NPTEL
+                    </li>
+
+                    <li>
+                        Arduino – IIT Bombay Spoken Tutorial
+                    </li>
+
+                    <li>
+                        MATLAB Fundamentals – MathWorks
+                    </li>
+
+                </ul>
+
+            `);
+
+        };
+
+
+        // Contact section
+        contact.onclick = function(event) {
+
+            event.preventDefault();
+
+            showContent("Contact ☎️", `
+
+                <p>
+                    <strong>Email:</strong>
+                    <a href="mailto:narmadhadevia2004@gmail.com">
+                        narmadhadevia2004@gmail.com
+                    </a>
+                </p>
+
+                <p>
+                    <strong>Mobile:</strong>
+                    <a href="tel:+917418192007">
+                        +91 7418192007
+                    </a>
+                </p>
+
+                <p>
+                    <strong>LinkedIn:</strong>
+                    <a href="https://linkedin.com/in/narmadhadevi-a-168632255/"
+                       target="_blank" rel="noopener noreferrer">
+                        linkedin.com/in/narmadhadevi-a-168632255/
+                    </a>
+                </p>
+
+                <p>
+                    <strong>GitHub:</strong>
+                    <a href="https://github.com/Narmadhadevi-18"
+                       target="_blank" rel="noopener noreferrer">
+                        github.com/Narmadhadevi-18
+                    </a>
+                </p>
+
+            `);
+
+        };
+
+
+        // Vanta animated background
+        if (window.VANTA) {
+
+            VANTA.NET({
+
                 el: "#vanta-bg",
                 mouseControls: true,
                 touchControls: true,
@@ -281,11 +763,12 @@
                 scaleMobile: 1.00,
                 color: 0xf0e0e5,
                 backgroundColor: 0x14092a
-            })
-        </script>
-        
 
-    </div>
+            });
+
+        }
+
+    </script>
+
 </body>
-
 </html>
